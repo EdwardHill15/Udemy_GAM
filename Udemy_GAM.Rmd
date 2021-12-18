@@ -56,11 +56,17 @@ This course provides an overview of modeling GLMs and GAMs using R. GLMs, and es
 
 ## How Old is the Universe
 
-The big-bang model implies that the universe expands uniformly according to Hubble's law:[^note1] 
+* The big-bang model implies that the universe expands uniformly according to Hubble's law:[^note1] 
 
 $$
 y = \beta x
 $$
+* Where $y$ is the relative velocity of any two galaxies seperated by distance $x$, and $\beta$ is "Hubble's constant". 
+
+* $\beta^{-1}$ is the approximate age of the universe, but $\beta$ is unknown and must be estimated from observations of $x$ and $y$. 
+
+See; @Wood2017, p. 1-9
+
 
 
 

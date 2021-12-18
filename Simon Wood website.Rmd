@@ -1,0 +1,92 @@
+---
+title: "Simon Wood website"
+author: "Edward Hill"
+date: "18-12-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![Simon Wood](https://www.maths.ed.ac.uk/~swood34/conival-1.JPG)
+
+# Simon N Wood
+
+Chair of Computational Statistics, [School of Mathematics](https://www.maths.ed.ac.uk/school-of-mathematics), James Clerk Maxwell Building, University of Edinburgh, EH9 3FD
+
+simon.wood ed.ac.uk I'm not on Twitter: it promotes thinking fast in a world that needs to think slow (in the Daniel Kahneman sense), and it's hard to think of a better way to encourage availability bias. I also view the biggest social justice issues as revolving around redistribution and taxation, a view that has strangely little traction on platforms run by companies paying little tax on huge turnovers. Plus, my immediate reactions are often wrong.
+
+I work as a professor of statistics. Statistics is about the honest interpretation of data. It's not always a popular subject: honest interpretation of data is difficult, and much less appealing than less honest interpretation. Disraeli is often supposed to have said that there are lies, damned lies and statistics. Gladstone was president of the Royal Statistical Society. Probably both were right.
+
+Since we can not in practice make everything safer than everything else, it is important to consider baseline risk in risk management. With this in mind the following graphic shows UK ONS data on deaths by age from the epidemic start until August 2021. The bars are for 5 year age bands (label "59" means ages 55-59). The bars in the top row show total deaths, with the Covid deaths in black.
+
+![Figure 1: deaths during COVID pandemic](https://www.maths.ed.ac.uk/~swood34/risk.png)
+
+The bottom row shows what would have happened under the worst possible scenario suggested without suppression, of half a million Covid deaths (based on the assumptions that implied a catastrophe for the Swedish policy that in fact never happened, so unlikely to be over-optimistic). Dark grey bars are then Covid (with the black portion what actually happened). Anyone who considers Covid to have been a bigger risk to them over the pandemic than the other risks they face, should probably think through why they believe that the risks that kill more people of their age do not apply to them, while the Covid risk does. Moving forward, vaccination has further reduced your risk of death if you get Covid by a factor of 20 or so. PHE analysis suggests similar levels of vaccine efficacy in clinically vulnerable groups, with even the immunosuppressed showing only a small drop in efficacy.
+
+One interesting mystery is why the media, politicians and people who ought to know better, focus on cases rather than actual Covid prevalence measurements, such as those produced by the ONS. Here is a comparison of cases (black line) and ONS survey measurments of percentage of people with Covid (black blobs).
+
+![Figure 2: ONS measurements in England and Scotlandf](https://www.maths.ed.ac.uk/~swood34/measure-or-guess.png)
+
+I have scaled things so that cases and ONS measurements match on average from day 450-500 (day 1 is 1st Jan 2020). If cases were really proportional to the number of people with Covid then the scaled case and ONS measurements should be on top of each other (with the red and blue smoothed versions being very close). They're not because there is really no good reason to expect detected cases among people who chose to get tested, or were told to by track and trace, to be proportional to the total number of infections. There is some relationship of course, as the plot shows. It's just not close enough that it makes any sense to use cases for management, when you have actual measurements.
+
+Here is the time course of daily new fatal infections from Covid-19, estimated from daily hospital fatalities in England (grey circles), along with the corresponding R estimates (log scale, so R<1 when log(R)<0). The estimated new infections each day are already in decline and R<1 before each full lockdown is called, but the timing of lockdown appears to roughly coincide with when the rate of increase of daily deaths reaches its maximum each time. The dip and recovery in R after the first lockdown is expected (unless lockdown did nothing). Deaths are used for this because they are well defined, the data are a fairly accurate meausure of reality (almost a census) and accuracy changes little over time. None of these things are remotely true for case data.
+
+![Figure 3: daily new fatal infections from Covid-19](https://www.maths.ed.ac.uk/~swood34/epidemic.png)
+
+Dotted vertical lines mark the imposition of major measures before the first full lockdown. The method is described in this paper now published in Biometrics, which also shows that the approach of Flaxman et al. (2020, Nature 584, 257-261) gives similar results if we estimate how and when R changed, in addition to how much it changed (Flaxman et al. assumed they knew the how and when part). Furthermore Sweden, which did not lockdown, saw declining infections only a day or two after the UK (Swedish GDP dropped about 3% in 2020 against the UK's 10% drop). The first wave results are essentially unchanged since the first version of the paper in early May 2020 (see arxiv version Acknowledgements for peer review saga). Had contact rates simply stayed at the level implied by R on the eve of lockdown 1 (and neglecting possible seasonality of transmission), the size of the peak in infections, cases or deaths would have been essentially unchanged from what happened, but the decline would have been slower (simple models suggest something like 25% more covid deaths, but this is highly uncertain and not included in the paper). The paper also briefly reviews the UK statistical evidence on life loss from economic shocks, which suggests that lockdowns may not in fact be net life savers (see e.g. this graphic). Without attempting attribution, an indication of the scale of immediate collatoral damage is that the ONS recorded approximately 13000 excess deaths for which covid was not a factor in the first 6 weeks of lockdown 1. Even if life lost to Covid-19 is the only life loss that counts, the cost per life year saved by these non-pharmaceutical-interventions (NPIs) appears to be an order of magnitude higher than the threshold for funding pharmaceutical interventions. See [this article](https://www.spectator.co.uk/article/how-much-does-it-cost-to-save-lives-from-covid)
+
+The above incidence results broadly agree with the REACT-2 reconstruction of symptom onset dates among antibody positive subjects in the survey's random sample, after allowing for the average 5-6 days from infection to onset. The left plot (a) below shows this reconstructed incidence in blue, with the smoothed version in black and the corresponding reconstruction of R (right scale) in grey (red vertical are lockdown dates, red horizontal the R=1 line). Similarly the above results agree with the estimates based on direct statistical sampling by the ONS (b below, lockdown dates in red - the survey was not running during the first lockdown). Horizontal axis scale is now day of year. Some differences in relative peak sizes are expected as a result of covid hospital care improvements and vaccine rollout, in particular.
+
+![Figure 4: Incidence rates of antibody positive subjects](https://www.maths.ed.ac.uk/~swood34/react2-ons.png)
+
+The conclusions about the Flaxman et al. model are consistent with other studies. For example Chin, Ioannidis, Tanner and Cripps. The results in the above pictures also broadly agree with the results obtained from repeating the analysis in the Imperial Covid response team's Report 41, as described in this Feb '21 pre-print (joint with Ersnt Wit, now peer reviewed and published in PLOS1). We again relaxed the assumption that how and when R changes is known, letting how and when be more data driven. We also set the times from infection to symptom onset, and symptom onset to hospitalisation to the values given in the papers cited in Report 41 as their sources (Report 41 uses shorter values without explanation). An attempt at a less technical presentation of the issues if this article. The R reconstruction, by English region, and for the whole of England, for most of 2020 then looks like this.
+
+![Figure 5: The R reconstruction, by English region, and for the whole of England, for most of 2020](https://www.maths.ed.ac.uk/~swood34/Rpic.png)
+
+
+One question is whether our results are somehow caused by smoothness assumptions, rather than the data. The Biometrics paper investigates this and concludes not. We also took the simple approach of substantially reducing the amount of smoothing relative to the best estimate of what is appropriate. This increases the variability of R (the above plot becomes more wiggly), but the timing results are unchanged. The results are driven by the data not the smoothness assumptions.
+
+So a minimal assumption analysis, as in my Biometics paper, or a replication of the Flaxman et al. approach, but removing the assumption that we know how and when R changed, or a re-doing of Imperial's Report 41 analysis with more defensible assumptions, all imply R<1 and incidence in decline before the lockdowns, and this is consistent with the REACT-2 symptom onset reconstructions, and the ONS incidence estimates. This is not absolute proof, but it is hard to see there is much room for reasonable doubt.
+
+Recently (August 9th) I followed the "scientific evidence" link on the [Scottish Government face coverings page](https://www.gov.scot/publications/coronavirus-covid-19-public-use-of-face-coverings/). It doesn't directly point to the evidence, but rather to a document that references an editorial (and one other source that the editorial points out is problematic) for a figure based on a [scientific paper](https://www.eurosurveillance.org/content/10.2807/1560-7917.ES.2020.25.49.2000725) that contains the actual evidence. The scientific paper is a properly conducted review of the studies on mask efficacy, which uses well established methods to combine the evidence. It concludes "The quality of the evidence is problematic. [...] Our best estimate is that the effect of wearing a face mask is [...] around 6 to 15% reduction in disease transmission." ([WHO](file:///C:/Users/Gebruiker/Downloads/WHO-2019-nCov-IPC_Masks-2020.5-eng.pdf) (page 8) assessment of the evidence is even more cautious). The Scottish government's interpretation of this as "Scientific evidence [...] is clear that face coverings are an important part of stopping the spread of coronavirus" seems questionable. "There is weak scientific evidence that face coverings may cause a small reduction in spread" would be more balanced summary (unless you view opinion as evidence, of course). My view is that this quality of evidence for this level of risk reduction, does not justify the communication impairment that masks cause in an educational setting. Especially given the massive reduction in risk of serious illness or death that vaccination has achieved, and the relatively low risk Covid poses to the young, irrespective of vaccination.
+
+Something that the Covid-19 crisis has emphasised is the fact that statisticians have not managed to adequately communicate how fundamental random sampling is to proper measurement of things like infection rates. That data *somehow related* to the thing we want to measure are not the same as data that actually measure it. Here is an attempt to explain [random sampling](https://www.maths.ed.ac.uk/~swood34/SamplingGenie.pdf) and why it means that you should trust plots like the ones from the [ONS Covid survey](https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/conditionsanddiseases/bulletins/coronaviruscovid19infectionsurveypilot/11september2020) in preference to plots of cases, like the first one [here](https://www.bbc.com/news/health-54064347).
+
+## A lockdown reading list
+
+* [Collapse](https://blackwells.co.uk/bookshop/product/Collapse-by-Jared-M-Diamond/9780241958681) (Jared Diamond) on how societies are destroyed, not by external forces, but by their failure to adapt their cultural norms to those forces.
+* [Thinking Fast and Slow](https://blackwells.co.uk/bookshop/product/Thinking-Fast-and-Slow-by-Daniel-Kahneman/9780141033570) (Daniel Kahneman) on the pitfalls of our intuitive reasoning, especially about risk and uncertainty.
+* [Mistakes were made, but not by me](https://blackwells.co.uk/bookshop/product/Mistakes-Were-Made-But-Not-by-Me-by-Carol-Tavris-Elliot-Aronson/9780544574786) (Carol Tarvis and Elliot Aronson) on the psychology of sticking with bad decisions.
+* [The Parable of the Old Man and the Young](https://poets.org/poem/parable-old-man-and-young) by Wilfred Owen, on consequences of the above.
+* [Economics The User's Guide](https://blackwells.co.uk/bookshop/product/Economics-by-Ha-Joon-Chang-author/9780718197032) (Ha-Joon Chang) on what you really need to know about economics, and how it is not mainly about money, nor just a scaled up version of household accounting.
+* [The Great Crash 1929](https://blackwells.co.uk/bookshop/product/The-Great-Crash-1929-by-John-Kenneth-Galbraith/9780141038254) (Galbraith) a delightful disection of economic hubris (and the need for stabilizing controls that we long since did away with).
+* [The Rise and Fall of the Third Reich](https://blackwells.co.uk/bookshop/product/The-Rise-and-Fall-of-the-Third-Reich-by-William-L-Shirer-author/9781451651683) (William Shirer) detailing exactly how things went wrong in Germany after the Great Depression.
+* [Witch hunting in Scotland](https://blackwells.co.uk/bookshop/product/Witch-Hunting-in-Scotland-by-Brian-P-Levack/9780415399432) (Brian Levack) on the Scottish experience of the great European witchcraft panic (James I/VI wrote a treatise on Witchcraft).
+* [Wood and Thomas paper](https://www.maths.ed.ac.uk/~swood34/WT99.pdf) on the problems of prediction with disease models in the absense of direct validation data (the least impressive item here).
+(from March 2020, but in retrospect p142 of 'Thinking Fast and Slow', on Availability Cascades is quite interesting.)
+
+## Another reading list
+
+* [Manufacturing Consent](https://blackwells.co.uk/bookshop/product/Manufacturing-Consent-by-Edward-S-Herman-Noam-Chomsky/9780099533115) (Herman and Chomsky) On the filters and selection pressures that can lead the media to approach issues entirely within the frame set by governments.
+* [The Age of Surveillance Capitalism](https://blackwells.co.uk/bookshop/product/The-Age-of-Surveillance-Capitalism-by-Shoshana-Zuboff/9781781256855) (Shoshana Zuboff) on big tech's commercial imperative to mass digital surveillance and behavioural manipulation (brilliantly researched, but maddeningly written).
+* [The Madness of Crowds](https://blackwells.co.uk/bookshop/product/The-Madness-of-Crowds-by-Douglas-Murray/9781472979575) (Douglas Murray) neatly dissecting the polarisation and inconsistency this can lead to.
+* [A State of Fear](https://blackwells.co.uk/bookshop/product/A-State-of-Fear-by-Laura-Dodsworth/9781780667201) (Laura Dodsworth) on the use of behavioural manipulation during the Covid pandemic.
+*[Lord of the Flies](https://blackwells.co.uk/bookshop/product/Lord-of-the-Flies-by-William-Golding/9780571273577) (William Golding) on fear, manipulation, mass psychology, and the inability of reason and evidence to overcome them.
+*[What really happened in Wuhan](https://blackwells.co.uk/bookshop/product/What-Really-Happened-in-Wuhan-by-Sharri-Markson/9781460761083) (Sharri Markson) on why a lab leak origin for Covid-19 is credible, and the propaganda effort to make it appear not so.
+(September/October 2021, the last 4 are very well written - the first 2 harder going.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
