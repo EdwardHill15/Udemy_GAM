@@ -51,7 +51,7 @@ This course provides an overview of modeling GLMs and GAMs using R. GLMs, and es
 
 2. [@Crawley2013]
 
-3. [How much more likely? The IMplications for Odds Ratios for Probabilities by Liberman](https://github.com/EdwardHill15/Udemy_GAM/blob/main/Linear%20Regression%20GLMs%20and%20GAMs%20with%20R/other%20documentation/liberman_2005_OR_paper_AJE.PDF)
+3. [How much more likely? The Implications for Odds Ratios for Probabilities by Liberman](https://github.com/EdwardHill15/Udemy_GAM/blob/main/Linear%20Regression%20GLMs%20and%20GAMs%20with%20R/other%20documentation/liberman_2005_OR_paper_AJE.PDF)
 [@Liberman2005]
 
 
