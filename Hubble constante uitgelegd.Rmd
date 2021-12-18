@@ -1,0 +1,59 @@
+---
+title: "Hubble constante uitgelegd"
+subtitle: "20 MEI 2021 DOOR ARIE NOUWEN"
+author: "Rmarkdown document gemaakt door Edward Hill"
+date: "18-12-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Hoe zit het nou met de Hubble constante, is die wel constant?
+
+![De Hubble Ultra deep Field, een zeer diepe blik op het heelal. Credit: NASA/ESA.](https://www.astroblogs.nl/wp-content/uploads/2016/09/800px-NASA-HS201427a-HubbleUltraDeepField2014-20140603-500x456.jpg)
+
+Mijn blog over de [waarnemingen aan 1048 type Ia supernovae](https://www.astroblogs.nl/2021/05/14/onderzoek-aan-ruim-1000-supernova-lijkt-te-wijzen-op-een-veranderlijke-hubble-constante/) en de conclusie uit dat onderzoek dat de Hubble constante mogelijk niet constant is riep discussie op. De Hubble constante is toch sowieso niet constant, want hij verandert toch met de tijd?, zei collega-astroblogger Paul Bakker terecht. En als hij dan niet constant is, waarom noemen ze het dan toch een constante? Vandaar dat het goed is om wat meer aandacht te schenken aan wat die Hubble constante nou precies is en of ‘ie echt wel constant is.
+
+De Hubble constante werd eind jaren twintig van de vorige eeuw ingevoerd door de Amerikaanse sterrenkundige Edwin Hubble en dat deed hij middels deze wet, die stelt dat sterrenstelsels zich van elkaar verwijderen met een snelheid die evenredig is met hun onderlinge afstand:
+
+$$
+H0 = v/d
+$$
+
+waarin $H0$ de Hubble constante op dit moment is, uitgedrukt in km/s/Mpc, d de afstand tot de aarde in megaparsec of Mpc (1 Mpc is ongeveer 3,26 miljoen lichtjaar) en $v$ de de snelheid (in km/s) waarmee het sterrenstelsel zich van ons verwijdert. Hubble nam enkele sterrenstelsels waar en zag ze door de gemeten roodverschuiving van de spectraallijnen van ons afbewegen (zie de grafiek hieronder), hetgeen hem tot de naar hem en de Belgische priester – sterrenkundige George Lemaître genoemde wet bracht.
+
+![Hubble’s oorspronkelijke grafiek uit 1929. Credit: Public Domain.](https://www.astroblogs.nl/wp-content/uploads/2021/05/Hubble-500x338.jpg)
+
+Feitelijk is het overigens zo dat niet de sterrenstelsels zich van ons af bewegen, maar is het de ruimte van het heelal dat expandeert en bewegen de sterrenstelsels mee. Hubble dacht toen zelf dat de waarde van $H0$ 500 km/s/Mpc was, dat wil zeggen dat een sterrenstelsel op 1 Mpc afstand zich met 500 km/s van ons af beweegt, op 2 Mpc afstand met 2 x 500 km/s, enzovoorts. Later werd duidelijk dat die geschatte waarde veel te hoog is.
+
+Sinds de introductie van de Hubble constante is duidelijk dat het eigenlijk een verkeerde naam is, want hij is niet constant. Nou ja deels wel, want hij is constant in afstand. Dat wil zeggen dat als de Hubble constante $H0$ in de buurt van ons Melkwegstelsel 70 km/Mpc is dat $H0$ dan ook in de buurt van een quasar of sterrenstelsel ver weg 70 km/s/Mpc is, oftewel op één en hetzelfde moment dijdt het heelal overal even snel uit. Of zoals blogger en sterrenkundige Ethan Siegel het omschrijft:
+
+>*The reason we call it the Hubble constant is because the Universe expands at the same rate at every location in the Universe: the Hubble constant is constant throughout space.*
+
+De Hubble constante is dan wel constant in afstand, hij is niet constant in tijd, zoveel is ook duidelijk. De reden is niet zo moeilijk: door de voortdurende uitdijing van het heelal, die al zo’n 13,8 miljard jaar gaande is, neemt het volume van het heelal toe en neemt de gemiddelde dichtheid van de (donkere) materie en van de straling af. Daardoor zal de zwaartekracht gemiddeld afnemen en dat zorgt ervoor dat de snelheid van uitdijing afneemt. De uitdijing ging vroeger dus sneller, ergo $H0$ was toen hoger. Als voorbeeld: toen het heelal de helft van zijn huidige leeftijd had was de uitdijing 80% sneller dan de huidige snelheid, toen z’n leeftijd nog maar 10% van de huidige leeftijd was toen was de snelheid maar liefst 17 keer hoger.
+
+![De Hubble parameter (waarvan $H0$ de waarde op dit moment is) wordt steeds lager, tot een asymptotische limiet.](https://www.astroblogs.nl/wp-content/uploads/2021/05/Xn2nW-500x266.png)
+
+
+Ja maar wacht eens even, als de snelheid van de uitdijing van het heelal afneemt, waarom lezen we dan overal dat de snelheid van uitdijing van het heelal versneld, zoals kennelijk in 1998 voor het eerst waargenomen? Ah, dan komen we bij het hoofdstuk over de donkere energie, de mysterieuze kracht die met zijn afstotende werking zorgt voor die versnelling. Maar hoe zit dat dan precies, een dalende en versnelde uitdijing? Welnu, laten we even naar de toekomst gaan: als het heelal 13.8 miljard jaar oud is, dus tien keer ouder dan nu, dan is de snelheid van de uitdijing maar 18% lager dan z’n huidige snelheid. Ah, de afname van de snelheid waarmee het heelal uitdijt wordt steeds minder. Uiteindelijk zal die afname zelfs stoppen en zal de snelheid een vaste, constante waarde hebben. Dán (in de héél verre toekomst) zal $H0$ daadwerkelijk constant zijn. Nou ja, als de donkere energie tenminste veroorzaakt wordt door de Kosmologische constante, welke meer dan honderd jaar geleden door Einstein werd geïntroduceerd.
+
+![Als het heelal uitdijt verdunnen materie en straling en neemt hun dichtheid af. De energiedichtheid van de ruimte echter blijft gelijk. Credit: E. Siegel / Beyond The Galaxy.](https://www.astroblogs.nl/wp-content/uploads/2021/05/0_j4dHvAbuUXjB9yBS-500x377.jpg)
+
+Donkere energie is vermoedelijk gekoppeld aan de ruimtetijd zelf en als het daadwerkelijk de Kosmologische constante is dan is de hoeveelheid energie per cm³ altijd constant (zie afbeelding hierboven). In het vroege heelal was het volume van het heelal nog niet groot en daarmee was de afstotende werking van de donkere energie niet merkbaar. Dat veranderde pas zes miljard jaar geleden, toen het heelal zover was gegroeid in volume dat de donkere energie sterker werd dan de (donkere) materie en de straling. Er was eerder al een daling in gang gezet van de uitdijingssnelheid van het heelal, zoals de cijfers hierboven laten zien, maar door de werking van de donkere energie werd die afname versneld. En dat is dus wat er feitelijk aan de hand is: door de donkere energie **vertraagt de afname van de snelheid van de uitdijing**, dus de rem op de uitdijing wordt steeds minder. [Technisch gesproken](https://en.wikipedia.org/wiki/Accelerating_expansion_of_the_universe#Technical_definition): De definitie van “versnelde uitdijing” is dat de tweede tijdsafgeleide van de kosmische schaalfactor \ddot{a} positief is [^note1], oftewel dat de eerste afgeleide \dot{a}  toeneemt met de tijd, wat overeenkomt met de vertragingsparameter $q$ die negatief is, tsja zeg dat dan meteen! Tot die afname op een gegeven moment nul is en de snelheid van uitdijing constant is.
+
+![Het ?-CDM model van de versnelde uitdijing. Credit: Design Alex Mittelmann, Coldcreation](https://www.astroblogs.nl/wp-content/uploads/2020/05/Lambda-Cold_Dark_Matter_Accelerated_Expansion_of_the_Universe_Big_Bang-Inflation-500x282.jpg)
+
+Kortom, de Hubble constante $H0$ is gedeeltelijk constant, namelijk wel in afstand [^note2], maar niet in tijd. Hij zal óók in afstand constant zijn zodra het volume van het heelal zo groot is dat de sterrenstelsels zo ver van elkaar afstaan dat de (donkere) materie geen zwaartekrachtseffecten meer heeft en dat alleen de afstotende werking van de donkere energie nog heerst. Als die donkere energie gevormd wordt door de Kosmologische constante Λ dán zal de snelheid van uitdijing na het wegvallen van de zwaartekracht niet groeien, maar constant zijn, met een echt constante $H0$ als gevolg, volgens berekeningen iets van 55,7 km/s/Mpc.
+
+Als de donkere energie niet gevormd wordt door de Kosmologische constante, dán hebben we weer een ander verhaal, dan kan je zoiets krijgen als de [Big Rip](https://www.astroblogs.nl/2013/12/20/de-big-rip-wat-dat-precies/) verging heb je een donkere energie die niet constant is, maar met de tijd toeneemt, zoals de zogeheten fantoomenergie of kwintessens en het resultaat daarvan is dat de afname van de uitdijingssnelheid wordt omgebogen in een verhoging.
+
+![Metingen aan de waarde van de Hubble constante H0. Credit: Renerpho/Wikipedia.](https://www.astroblogs.nl/wp-content/uploads/2021/05/1920px-Hubbleconstants_color-500x172.png)
+
+Zijn we er nu met bovenstaand verhaal over de Hubble constante? Nee, nog steeds niet. Want wat ook nog speelt is de hele discussie rondom de juiste waarde van $H0$, de zogeheten [Hubble-spanning](https://www.astroblogs.nl/dossiers/de-hubble-spanning/). Los van de vraag of de Hubble constante wel of niet constant is hebben we ook nog de vraag wat nou precies vandaag de dag de juiste waarde van $H0$ is:  de waarde voor $H0$ is in het vroege heelal een andere dan de $H0$ in het huidige heelal (67,4 ± 0,5 km/s/Mpc versus 72,04 ± 2,67 km/s/Mpc – de rode versus zwarte stippen in de grafiek hierboven), een verschil dat niet zomaar wordt weggepoets als statistische ruis of dat komt door instrumentele fouten. Afijn, wordt vast en zeker vervolgd. Bron: grotendeels deze blog van Ethan Siegel.
+
+[^note1]: [De schaalfactor](https://en.wikipedia.org/wiki/Scale_factor_(cosmology))   is een belangrijke parameter in de zogeheten Friedmann vergelijkingen van het expanderende heelal. Het is zeg maar de factor die weergeeft hoe snel de expansie gaat.
+
+[^note2]: Tenzij uiteraard de onderzoekers van die 1048 supernovae gelijk hebben, dat de Hubble constante ook verandert met de roodverschuiving, d.w.z. met de afstand.
+
