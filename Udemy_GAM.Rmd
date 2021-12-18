@@ -54,7 +54,21 @@ This course provides an overview of modeling GLMs and GAMs using R. GLMs, and es
 3. [How much more likely? The Implications for Odds Ratios for Probabilities by Liberman](https://github.com/EdwardHill15/Udemy_GAM/blob/main/Linear%20Regression%20GLMs%20and%20GAMs%20with%20R/other%20documentation/liberman_2005_OR_paper_AJE.PDF)
 [@Liberman2005]
 
+## How Old is the Universe
 
+The big-bang model implies that the universe expands uniformly according to Hubble's law:[^note1] 
+
+$$
+
+y = \beta x
+
+$$
+
+
+
+
+
+[^note1]: Easiest way of writing mathematical equation in R Markdown  See Youtube: https://www.youtube.com/watch?v=4I3PCDME5U8)
 
 
 # References
