@@ -1,5 +1,5 @@
 ---
-title: "Udemy_GAM"
+title: "Generalized Linear (GLM) and Additive Modeling (GAM) with R. An Online       Course Presented by Geoffrey S. Hubona"
 author: "Edward Hill"
 date: "18-12-2021"
 output: 
