@@ -1,2 +1,2 @@
 # Udemy_GAM
-Udemy Course Generalized Additive Models in R
+Udemy Course Linear Regression and Generalized Additive Models in R
