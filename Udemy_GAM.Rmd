@@ -59,9 +59,7 @@ This course provides an overview of modeling GLMs and GAMs using R. GLMs, and es
 The big-bang model implies that the universe expands uniformly according to Hubble's law:[^note1] 
 
 $$
-
 y = \beta x
-
 $$
 
 

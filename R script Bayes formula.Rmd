@@ -1,0 +1,14 @@
+---
+title: "Bayes formula"
+author: "Edward Hill"
+date: "18-12-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+$$
+P(A \mid B)=\frac{P(B \mid A) P(A)}{P(B)}
+$$
