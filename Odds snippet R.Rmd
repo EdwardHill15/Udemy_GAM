@@ -1,0 +1,14 @@
+---
+title: "Odds snippet"
+author: "Edward Hill"
+date: "18-12-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+$$
+\text { Odds }=p /(1-p)=p / q
+$$
