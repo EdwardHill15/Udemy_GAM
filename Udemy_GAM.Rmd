@@ -45,6 +45,14 @@ This course provides an overview of modeling GLMs and GAMs using R. GLMs, and es
 * This course would be useful for anyone involved with linear modeling estimation, including graduate students and/or working professionals in quantitative modeling and data analysis.
 * The focus, and majority of content, of this course is on generalized additive modeling. Anyone who wishes to learn how to specify, estimate and interpret GAMs would especially benefit from this course.
 
+## Relevant Literature
+
+1. [@Wood2017]
+
+2. [@Crawley2013]
+
+3. [How much more likely? The IMplications for Odds Ratios for Probabilities by Liberman](https://github.com/EdwardHill15/Udemy_GAM/blob/main/Linear%20Regression%20GLMs%20and%20GAMs%20with%20R/other%20documentation/liberman_2005_OR_paper_AJE.PDF)
+[@Liberman2005]
 
 
 
