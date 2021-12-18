@@ -14,6 +14,10 @@ link-citations: yes
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+![Generalized Additive Models by Simon N. Wood](https://github.com/EdwardHill15/Udemy_GAM/blob/main/Wood.jpg?raw=true)
+
+![The R Book by Michael Crawley](https://github.com/EdwardHill15/Udemy_GAM/blob/main/Crawley.jpg?raw=true)
+
 # Introduction
 
 ## Linear Regression, GLM's and GAMs with R
