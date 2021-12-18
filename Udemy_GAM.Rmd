@@ -1,0 +1,48 @@
+---
+title: "Udemy_GAM"
+author: "Edward Hill"
+date: "18-12-2021"
+output: 
+  html_document:
+      theme: journal
+bibliography: R_GAM.bib
+biblio-style: apalike
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+## Linear Regression, GLM's and GAMs with R
+
+**Linear Regression**, **GLMs** and **GAMs** with R demonstrates how to use R to extend the basic assumptions and constraints of linear regression to specify, model, and interpret the results of generalized linear (GLMs) and generalized additive (GAMs) models. The course demonstrates the estimation of GLMs and GAMs by working through a series of practical examples from the book Generalized Additive Models: An Introduction with R by Simon N. Wood [@Wood2017]. 
+
+**Linear statistical models have a univariate response** modeled as a linear function of predictor variables and a zero mean random error term. The assumption of linearity is a critical (and limiting) characteristic. 
+
+**Generalized linear models (GLMs) relax this assumption of linearity**. They permit the expected value of the response variable to be a **smoothed** (e.g. non-linear) monotonic function of the linear predictors. **GLMs also relax the assumption that the response variable is normally distributed** by allowing for many distributions (e.g. normal, poisson, binomial, log-linear, etc.). 
+
+**Generalized additive models (GAMs) are extensions of GLMs**. GAMs allow for the estimation of regression coefficients that take the form of **non-parametric smoothers**. Nonparametric smoothers like lowess (locally weighted scatterplot smoothing) fit a smooth curve to data using localized subsets of the data. 
+
+This course provides an overview of modeling GLMs and GAMs using R. GLMs, and especially GAMs, have evolved into standard statistical methodologies of considerable flexibility. The course addresses recent approaches to modeling, estimating and interpreting GAMs. The focus of the course is on **modeling and interpreting GLMs and especially GAMs with R**. Use of the freely available R software illustrates the practicalities of linear, generalized linear, and generalized additive models.
+
+**What you'll learn**
+
+* Understand the assumptions of ordinary least squares (OLS) linear regression.
+* Specify, estimate and interpret linear (regression) models using R.
+* Understand how the assumptions of OLS regression are modified (relaxed) in order to specify, estimate and interpret generalized linear models (GLMs).
+* Specify, estimate and interpret GLMs using R.
+* Understand the mechanics and limitations of specifying, estimating and interpreting generalized additive models (GAMs).
+
+**For whom is this course:**
+
+* This course would be useful for anyone involved with linear modeling estimation, including graduate students and/or working professionals in quantitative modeling and data analysis.
+* The focus, and majority of content, of this course is on generalized additive modeling. Anyone who wishes to learn how to specify, estimate and interpret GAMs would especially benefit from this course.
+
+
+
+
+
+# References

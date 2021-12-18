@@ -1,0 +1,227 @@
+---
+title: "GLMs and GAMs Rmarkdown script ozone.data"
+author: "Edward Hill"
+date: "21-2-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Log Linear models for Categorical Data
+
+```{r}
+library(epiR)
+female <- c(435,147)
+female
+male <- c(375,134)
+male
+df <- cbind(female, male)
+TAB <- matrix(c(314, 147, 375, 134), nrow=2, byrow=TRUE)
+TAB$Gender <- c('Female', 'Male')
+TAB
+df2 <- t(df)
+df2
+df2 <- as.data.frame(df2)
+colnames(df2) <- c("Believer", "Non-Believer")
+rownames(df2) <- c("Female", "Male")
+df2 <- as.data.frame(df2)
+df2
+```
+
+
+# Eerst analyseren met epiR programma voor het berekenen
+# van OR
+
+```{r}
+TAB <- matrix(c(435, 147, 375,134), nrow=2, byrow=TRUE)
+colnames(TAB) <- c("Believer", "Non-Believer")
+rownames(TAB) <- c("Female", "Male")
+TAB
+epi.2by2(TAB, method="cohort.count")
+```
+
+# Log-Linear Models for Categorical Data
+
+# Are there differences between males and females in 
+# the holding of this belief?
+
+# We will address this question using analysis of deviance 
+# to compare the fit of two competing models: 
+* One in which belief is independent of gender. 
+* Second with interaction between belief and gender. 
+
+# Since we are looking at the independence of counts in 
+# a contingency table, the distribution to use is Poisson. 
+# First, let's enter the data and chack it: 
+
+```{r}
+a1 <- data.frame(y=c(435, 147, 375, 134), 
+gender=as.factor(c("F","F","M","M")),
+faith=as.factor(c(1,0,1,0)))
+a1
+```
+# Gender and faith are both factor variables
+# The following fits the model and checks that the model
+# matrix is as expected
+```{r}
+mod.0 <- glm(y~gender+faith,data=a1, family=poisson)
+mod.0
+model.matrix(mod.0)
+fitted(mod.0)
+```
+# The fit appears to be quite close, and it would be surprising
+# if a model with interactions between faith and gender did significantly better
+
+# The following fits the model, check the model matrix
+# and prints the fitted model object:
+
+```{r}
+mod.1 <- glm(y~gender*faith, data=a1, family=poisson)
+model.matrix(mod.1)
+mod.1
+```
+
+# We test for evidence for an interaction between gender and faith
+# The null hypothesis that mod.0 is correct is tested against the more
+# general alternative that mod.1 is correct, using analysis of deviance:
+```{r}
+anova(mod.0, mod.1, test="Chisq")
+```
+
+# A p-value of 0.69 suggests there is no evidence to reject model 0
+# and the hypothesis of no association between gender and belief in the
+# afterlife 
+
+# Generalized Additive Models
+Up to this point, continuous explanatory variables have been added to models as linear functions, linearized
+parametric transformations, or through various link functions. In all cases, an explicit or implicit assumption
+was made about the parametric form of the function to be fitted to the data (whether quadratic, logarithmic,
+exponential, logistic, reciprocal or whatever). In many cases, however, you have one or more continuous
+explanatory variables, but you have no a priori reason to choose one particular parametric form over another
+for describing the shape of the relationship between the response variable and the explanatory variable(s).
+Generalized additive models (GAMs) are useful in such cases because they allow you to capture the shape of
+a relationship between y and x without prejudging the issue by choosing a particular parametric form.
+Generalized additive models (implemented in R by the gam function) extend the range of application of
+generalized linear models (glm) by allowing non-parametric smoothers in addition to parametric forms, and
+these can be associated with a range of link functions. All of the error families allowed with glm are available
+with gam (binomial, poisson, Gamma, etc.). Indeed, gam has many of the attributes of both glm and
+lm, and the output can be modified using update. You can use all of the familiar methods such as print,
+plot, summary, anova, predict and fitted after a GAM has been fitted to data. The gam function
+used in this book is in the mgcv package contributed by Simon Wood:
+library(mgcv)
+There are many ways of specifying the model in a GAM: all of the continuous explanatory variables x, w
+and z can enter the model as non-parametrically smoothed functions like this:
+y~s(x) + s(w) + s(z)
+Alternatively, the model can contain a mix of parametrically estimated parameters (x and z) and smoothed
+variables s(w):
+y~x + s(w) + z
+Formulae can involve nested (two-dimensional) terms in which the smoothing s() terms have more than one
+argument, implying an isotropic smooth:
+y~s(x) + s(z) + s(x,z)
+Alternatively the smoothers can have overlapping terms such as
+y~s(x,z) + s(z,w)
+
+# Characteristics of GAMs
+* Can think of interaction terms as two-dimensional smooths
+# think of a curved surface that can form three-dimensional
+# objects (next slide uses vis.gam() in mgcv package):
+
+```{r}
+par(mfrow=c(1,1))
+test1 <- function(x,z,sx=0.3, sz=0.4)
+{(pi**sx*sz)*(1.2*exp(-(x-0.2) ^2/sx^2
+                      -(z-0.3) ^2/sz^2)+0.8*exp(-(x-0.7)^2/sx^2
+                                                - (z-0.8)^2/sz^2))}
+n <- 500
+x <- runif(n);z <- runif(n);
+y <- test1(x,z)+rnorm(n)*0.1
+b4 <- gam(y~s(x,z))
+vis.gam(b4)
+```
+
+
+# Example: Ozone Levels (need data file: ozone.data.txt)
+* Want to model ozone concentration as a function of three
+continuous explanatory variables. 
+
+```{r}
+library(readxl)
+data_ozone_xls <- read_excel("D:/Udemy/Linear Regression GLMs and GAMs with R/data files/data.ozone.xls.xlsx")
+ozone.data <- as.data.frame(data_ozone_xls)
+head(ozone.data, 5)
+```
+
+```{r}
+attach(ozone.data)
+names(ozone.data)
+str(ozone.data)
+```
+
+#### Generalized Additive Models (GAMs) provide nonparametric smoothing.
+#### They allow you to view the shape of the relationship, without prejudging
+#### See Wikipedia http://en.wikipedia.org/wiki/Generalized_additive_mode
+
+# first remove prvious variables foating around in your workspace
+```{r}
+rm(list - ls()) # remove previous variables
+ls()
+search() # the search command returns the data-sets and the packages 
+# that are floating around in your workspace
+```
+
+```{r}
+head(ozone.data)
+ozone.data <- as.data.frame(ozone.data)
+
+```
+
+## Examine all the bivariate plots fitting a non-parametric smoothed lowess line 
+```{r}
+pairs (ozone.data, panel=function(x,y){points(x,y);lines(lowess(x,y))})
+
+```
+ ## we will need to use Wood's GAM package mgcv: 
+ 
+```{r}
+library(mgcv)
+```
+ 
+## fit all three explanatory variables using a non-parametric smoother s(): 
+```{r}
+m1=gam(ozone~s(rad)+s(temp)+s(wind))
+```
+# View the results: 
+```{r}
+summary(m1)
+```
+## Note that intercept is parametric coefficient but
+## all explanatory variables are fitted as smooth terms. 
+## All explanatory variables are significant, but radiation is least significant
+## So, we fit a second model, omitting radiation:
+
+```{r}
+m2=gam(ozone~(temp) + s(wind))
+summary(m2) # without s(rad)
+```
+## We compare the two GAMs to examine significant differences
+```{r}
+anova(m1,m2,test="F") # significant; so keep the more complex model
+
+str(ozone.data)
+```
+## radiation should remain in the model since deleting radiation
+## caused a highly significant increase in deviance. 
+
+## Let's investigate the possibility of an interaction
+## between wind and temperature:
+
+
+```{r}
+m3 <- gam(ozone~s(temp)+s(wind)+s(rad)+s(wind, temp))
+summary(m3)
+```
+
+## Interaction is highly significant, but main effect of temperature 
+## is cancelled out

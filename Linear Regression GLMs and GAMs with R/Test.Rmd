@@ -1,0 +1,22 @@
+---
+title: "Tests"
+author: "Edward Hill"
+date: "10-2-2021"
+output: html_document
+---
+```{R}
+library(datasets)
+data("airquality")
+summary(airquality)
+```
+
+```{R}
+pairs(airquality)
+```
+
+```{R}
+fit <- lm(Ozone ~ Solar.R + Wind + Temp, data=airquality)
+summary(fit)
+```
+
+

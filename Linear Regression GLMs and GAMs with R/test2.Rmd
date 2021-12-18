@@ -1,0 +1,72 @@
+---
+title: "Edward Hill first output"
+author: "Edward Hill"
+date: "10-2-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Binomial models and heart disease
+
+# Read in original Hand et al data from heart.csv
+library(readr)
+heart <- read_csv("D:/Udemy/Linear Regression GLMs and GAMs with R/data/heart.csv")
+View(heart) # to only view the first six rows
+
+# Then plot the observed proportions of those who had a heart attack
+# divided by the total number of patients:
+p <- heart$ha /(heart$ha+heart$ok)
+p
+
+# Then plot the proportion as a function of increasing CK:
+plot(heart$ck,p,xlab="Creatinine kinase level", ylab="Proportion Heart Attack")
+
+# GLM call using cbind() to fit the heart attack model
+mod.0 <- glm(cbind(ha,ok)~ck, family=binomial(link=logit), data=heart)
+mod.0
+
+#or we could have used since the logit link is the R default for binomial
+mod.0 <- glm(cbind(ha,ok)~ck, family=binomial,data=heart)
+mod.0
+
+# Generate the model diagnostic plots
+par(mfrow=c(2,2))
+plot(mod.0)
+
+# Plot the predicted heart attack levels (proportions)
+plot(heart$ck,p,xlab="Creatinise kinase level", ylab="proportion Heart Attack")
+lines(heart$ck,fitted(mod.0))
+
+# Fit a second model with a cubic linear predictor
+mod.2 <- glm(cbind(ha,ok)~ck+I(ck^2)+I(ck^3), family=binomial, data=heart)
+mod.2
+
+# Plot predicted heart attack levels (proportions) with the cubic model
+par(mfrow=c(1,1))
+plot(heart$ck,p,xlab="Creatinine kinase level", ylab="Proportion Heart Attack")
+lines(heart$ck,fitted(mod.2))
+
+# Calculate an 'analysis of deviance' table
+anova(mod.0,mod.2,test="Chisq")
