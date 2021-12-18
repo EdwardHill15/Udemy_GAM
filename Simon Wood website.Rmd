@@ -27,7 +27,7 @@ The bottom row shows what would have happened under the worst possible scenario 
 
 One interesting mystery is why the media, politicians and people who ought to know better, focus on cases rather than actual Covid prevalence measurements, such as those produced by the ONS. Here is a comparison of cases (black line) and ONS survey measurments of percentage of people with Covid (black blobs).
 
-![Figure 2: ONS measurements in England and Scotlandf](https://www.maths.ed.ac.uk/~swood34/measure-or-guess.png)
+![Figure 2: ONS measurements in England and Scotland](https://www.maths.ed.ac.uk/~swood34/measure-or-guess.png)
 
 I have scaled things so that cases and ONS measurements match on average from day 450-500 (day 1 is 1st Jan 2020). If cases were really proportional to the number of people with Covid then the scaled case and ONS measurements should be on top of each other (with the red and blue smoothed versions being very close). They're not because there is really no good reason to expect detected cases among people who chose to get tested, or were told to by track and trace, to be proportional to the total number of infections. There is some relationship of course, as the plot shows. It's just not close enough that it makes any sense to use cases for management, when you have actual measurements.
 
@@ -75,6 +75,7 @@ Something that the Covid-19 crisis has emphasised is the fact that statisticians
 * [A State of Fear](https://blackwells.co.uk/bookshop/product/A-State-of-Fear-by-Laura-Dodsworth/9781780667201) (Laura Dodsworth) on the use of behavioural manipulation during the Covid pandemic.
 *[Lord of the Flies](https://blackwells.co.uk/bookshop/product/Lord-of-the-Flies-by-William-Golding/9780571273577) (William Golding) on fear, manipulation, mass psychology, and the inability of reason and evidence to overcome them.
 *[What really happened in Wuhan](https://blackwells.co.uk/bookshop/product/What-Really-Happened-in-Wuhan-by-Sharri-Markson/9781460761083) (Sharri Markson) on why a lab leak origin for Covid-19 is credible, and the propaganda effort to make it appear not so.
+
 (September/October 2021, the last 4 are very well written - the first 2 harder going.)
 
 
