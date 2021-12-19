@@ -3,14 +3,18 @@ title: "Hubble constante uitgelegd"
 subtitle: "20 MEI 2021 DOOR ARIE NOUWEN"
 author: "Rmarkdown document gemaakt door Edward Hill"
 date: "18-12-2021"
-output: html_document
+output: 
+  #cleanrmd::html_document_clean:
+    #theme: sakura-vader
+    html_document:
+      theme: journal
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Hoe zit het nou met de Hubble constante, is die wel constant?
+### Hoe zit het nou met de Hubble constante, is die wel constant?
 
 ![De Hubble Ultra deep Field, een zeer diepe blik op het heelal. Credit: NASA/ESA.](https://www.astroblogs.nl/wp-content/uploads/2016/09/800px-NASA-HS201427a-HubbleUltraDeepField2014-20140603-500x456.jpg)
 
@@ -21,7 +25,7 @@ De Hubble constante werd eind jaren twintig van de vorige eeuw ingevoerd door de
 $$
 H0 = v/d
 $$
-
+                              
 waarin $H0$ de Hubble constante op dit moment is, uitgedrukt in km/s/Mpc, d de afstand tot de aarde in megaparsec of Mpc (1 Mpc is ongeveer 3,26 miljoen lichtjaar) en $v$ de de snelheid (in km/s) waarmee het sterrenstelsel zich van ons verwijdert. Hubble nam enkele sterrenstelsels waar en zag ze door de gemeten roodverschuiving van de spectraallijnen van ons afbewegen (zie de grafiek hieronder), hetgeen hem tot de naar hem en de Belgische priester – sterrenkundige George Lemaître genoemde wet bracht.
 
 ![Hubble’s oorspronkelijke grafiek uit 1929. Credit: Public Domain.](https://www.astroblogs.nl/wp-content/uploads/2021/05/Hubble-500x338.jpg)
